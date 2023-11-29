@@ -71,11 +71,12 @@ class Prediction:
             MLOGP = self.params.MLOGP
 
             input = np.array([[CIC0, SM1_Dz, GATS1i, NdsCH, NdssC, MLOGP]], dtype=float)
-            predicted_LC50 = model.predict(input.values)
+            predicted_LC50 = model.predict(input)
 
             return predicted_LC50
 
         except Exception as e:
             logger.exception(f"""Exception while prediction. Exception message: {str(e)}""")
             raise e
-
+    
+    

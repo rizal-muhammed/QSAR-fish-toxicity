@@ -1,1 +1,15 @@
-key: value
+database_insertion_training_params:
+  db_name: "fish_toxicity_training_db"
+  table_name: "good_raw_data"
+  column_names: {
+    "CIC0": FLOAT(25),
+    "SM1_Dz": FLOAT(25),
+    "GATS1i": FLOAT(25),
+    "NdsCH": FLOAT(25),
+    "NdssC": FLOAT(25),
+    "MLOGP": FLOAT(25),
+    "LC50": FLOAT(25)
+  }
+
+data_preprocessing_training_params:
+  label_column_name: LC50

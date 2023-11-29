@@ -17,3 +17,39 @@ class DataValidationTrainingConfig:
     training_source_dir: Path
     file_name: str
     number_of_columns: int
+
+@dataclass(frozen=True)
+class DataTransformationTrainingConfig:
+    good_dir: Path
+    bad_dir: Path
+    archive_bad_dir: Path
+    column_names: list
+
+@dataclass(frozen=True)
+class DataBaseOperationsTrainingConfig:
+    root_dir: Path
+    file_name: str
+    good_dir: Path
+    bad_dir: Path
+
+@dataclass(frozen=True)
+class DataBaseOperationsTrainingCredentials:
+    host: str
+    user: str
+    password: str
+
+@dataclass(frozen=True)
+class DataBaseOperationsTrainingParams:
+    db_name: str
+    table_name: str
+    column_names: dict
+
+@dataclass(frozen=True)
+class DataPreProcessingTrainingConfig:
+    root_dir: Path
+    input_filepath: Path
+    preprocessed_input_data_dir: Path
+
+@dataclass(frozen=True)
+class DataPreProcessingTrainingParams:
+    label_column_name: str

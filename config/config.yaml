@@ -14,3 +14,20 @@ data_validation_training:
   training_source_dir: artifacts/data_ingestion/data
   file_name: qsar_fish_toxicity.csv
   number_of_columns: 7
+
+data_transformation_training:
+  good_dir: artifacts/data_validation/training_raw_files_validated/good_raw
+  bad_dir: artifacts/data_validation/training_raw_files_validated/bad_raw
+  archive_bad_dir: artifacts/data_validation/archive_bad_dir
+  column_names: ["CIC0", "SM1_Dz", "GATS1i", "NdsCH", "NdssC", "MLOGP", "LC50"]
+
+database_operations_training:
+  root_dir: artifacts/training_file_from_db
+  file_name: inputfile.csv
+  good_dir: artifacts/data_validation/training_raw_files_validated/good_raw
+  bad_dir: artifacts/data_validation/training_raw_files_validated/bad_raw
+
+data_preprocessing_training:
+  root_dir: artifacts/preprocessed_data
+  input_filepath: artifacts/training_file_from_db/inputfile.csv
+  preprocessed_input_data_dir: artifacts/preprocessed_data/preprocessed_data

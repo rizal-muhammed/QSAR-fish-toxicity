@@ -53,3 +53,19 @@ class DataPreProcessingTrainingConfig:
 @dataclass(frozen=True)
 class DataPreProcessingTrainingParams:
     label_column_name: str
+
+@dataclass(frozen=True)
+class ModelTrainingConfig:
+    root_dir: Path
+    models_dir: Path
+    figures_dir: Path
+    preprocessed_X: Path
+    preprocessed_y: Path
+
+
+@dataclass(frozen=True)
+class ModelTrainingParams:
+    linear_regression_params: dict
+    random_forest_params: dict
+    svr_params: dict
+    test_size: float

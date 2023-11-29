@@ -31,3 +31,10 @@ data_preprocessing_training:
   root_dir: artifacts/preprocessed_data
   input_filepath: artifacts/training_file_from_db/inputfile.csv
   preprocessed_input_data_dir: artifacts/preprocessed_data/preprocessed_data
+
+model_training:
+  root_dir: artifacts/model_training
+  models_dir: artifacts/model_training/best_model
+  figures_dir: artifacts/model_training/figures
+  preprocessed_X: artifacts/preprocessed_data/preprocessed_data/preprocessed_input_X.csv
+  preprocessed_y: artifacts/preprocessed_data/preprocessed_data/preprocessed_input_y.csv

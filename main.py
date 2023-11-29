@@ -4,7 +4,7 @@ from QSARFishToxicity.pipeline.stage_02_data_validation_training import DataVali
 from QSARFishToxicity.pipeline.stage_03_data_transformation_training import DataTransformationTrainingPipeline
 from QSARFishToxicity.pipeline.stage_04_database_ops_training import DatabaseOperationsTrainingPipeline
 from QSARFishToxicity.pipeline.stage_05_data_preprocessing_training import DataPreProcessingTrainingPipeline
-
+from QSARFishToxicity.pipeline.stage_06_model_training import ModelTrainingPipeline
 
 # STAGE_NAME = f"""Data Ingestion"""
 # try:
@@ -46,12 +46,22 @@ from QSARFishToxicity.pipeline.stage_05_data_preprocessing_training import DataP
 #     logger.exception(e)
 #     raise e
 
-STAGE_NAME = f"""Data Pre-Processing Training"""
+# STAGE_NAME = f"""Data Pre-Processing Training"""
+# try:
+#     logger.info(f""">>>>>>> Stage {STAGE_NAME} started... <<<<<<<""")
+#     data_preprocessing_training = DataPreProcessingTrainingPipeline()
+#     data_preprocessing_training.main()
+#     logger.info(f""">>>>>>> Stage {STAGE_NAME} Completed, and data exported as csv for model building <<<<<<<\n\n""")
+# except Exception as e:
+#     logger.exception(e)
+#     raise e
+
+STAGE_NAME = f"""Model Training"""
 try:
     logger.info(f""">>>>>>> Stage {STAGE_NAME} started... <<<<<<<""")
-    data_preprocessing_training = DataPreProcessingTrainingPipeline()
-    data_preprocessing_training.main()
-    logger.info(f""">>>>>>> Stage {STAGE_NAME} Completed, and data exported as csv for model building <<<<<<<\n\n""")
+    model_training = ModelTrainingPipeline()
+    model_training.main()
+    logger.info(f""">>>>>>> Stage {STAGE_NAME} Completed. <<<<<<<\n\n""")
 except Exception as e:
     logger.exception(e)
     raise e

@@ -8,7 +8,9 @@ from QSARFishToxicity.entity import (DataIngestionConfig,
                                      DataBaseOperationsTrainingCredentials,
                                      DataBaseOperationsTrainingParams,
                                      DataPreProcessingTrainingConfig,
-                                     DataPreProcessingTrainingParams)
+                                     DataPreProcessingTrainingParams,
+                                     ModelTrainingConfig,
+                                     ModelTrainingParams)
 
 
 class ConfigurationManager:
@@ -119,3 +121,28 @@ class ConfigurationManager:
         )
 
         return data_preprocessing_training_params
+
+    def get_model_training_config(self, ) -> ModelTrainingConfig:
+        model_training = self.config.model_training
+
+        model_training_config = ModelTrainingConfig(
+            root_dir = model_training.root_dir,
+            models_dir = model_training.models_dir,
+            figures_dir = model_training.figures_dir,
+            preprocessed_X = Path(model_training.preprocessed_X),
+            preprocessed_y = Path(model_training.preprocessed_y)
+        )
+
+        return model_training_config
+    
+    def get_model_training_params(self, ) -> ModelTrainingParams:
+        model_training = self.params.model_training_params
+
+        model_training_params = ModelTrainingParams(
+            linear_regression_params = model_training.linear_regression_params,
+            random_forest_params = model_training.random_forest_params,
+            svr_params = model_training.svr_params,
+            test_size = model_training.test_size,
+        )
+
+        return model_training_params

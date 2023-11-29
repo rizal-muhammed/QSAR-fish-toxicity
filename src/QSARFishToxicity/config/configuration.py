@@ -1,7 +1,8 @@
 from pathlib import Path
 from QSARFishToxicity.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH, SECRETS_FILE_PATH
 from QSARFishToxicity.utils import common
-from QSARFishToxicity.entity import (DataIngestionConfig,)
+from QSARFishToxicity.entity import (DataIngestionConfig,
+                                     DataValidationTrainingConfig)
 
 
 class ConfigurationManager:
@@ -28,3 +29,19 @@ class ConfigurationManager:
         )
     
         return data_ingestion_config
+
+    def get_data_validation_training_config(self) -> DataValidationTrainingConfig:
+        config = self.config.data_validation_training
+
+        common.create_directories([config.good_dir, config.bad_dir])
+
+        data_validation_training_config = DataValidationTrainingConfig(
+            root_dir = config.root_dir,
+            good_dir = config.good_dir,
+            bad_dir = config.bad_dir,
+            training_source_dir = config.training_source_dir,
+            file_name = config.file_name,
+            number_of_columns = config.number_of_columns,
+        )
+
+        return data_validation_training_config

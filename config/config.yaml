@@ -6,3 +6,11 @@ data_ingestion:
   destination_folder: artifacts/data_ingestion/data
   filename: qsar_fish_toxicity.csv
   miscellaneous_folder: artifacts/data_ingestion/miscellaneous
+
+data_validation_training:
+  root_dir: artifacts/data_validation/training_raw_files_validated
+  good_dir: artifacts/data_validation/training_raw_files_validated/good_raw
+  bad_dir: artifacts/data_validation/training_raw_files_validated/bad_raw
+  training_source_dir: artifacts/data_ingestion/data
+  file_name: qsar_fish_toxicity.csv
+  number_of_columns: 7

@@ -10,7 +10,9 @@ from QSARFishToxicity.entity import (DataIngestionConfig,
                                      DataPreProcessingTrainingConfig,
                                      DataPreProcessingTrainingParams,
                                      ModelTrainingConfig,
-                                     ModelTrainingParams)
+                                     ModelTrainingParams,
+                                     PredictionConfig,
+                                     PredictionParams)
 
 
 class ConfigurationManager:
@@ -146,3 +148,26 @@ class ConfigurationManager:
         )
 
         return model_training_params
+    
+    def get_prediction_config(self, ) -> PredictionConfig:
+        prediction = self.config.prediction_config
+
+        prediction_config = PredictionConfig(
+            model_dir=prediction.model_dir,
+        )
+
+        return prediction_config
+    
+    def get_prediction_params(self, ) -> PredictionParams:
+        prediction = self.params.prediction_params
+
+        prediction_params = PredictionParams(
+            CIC0=prediction.CIC0,
+            SM1_Dz=prediction.SM1_Dz,
+            GATS1i=prediction.GATS1i,
+            NdsCH=prediction.NdsCH,
+            NdssC=prediction.NdssC,
+            MLOGP=prediction.MLOGP,
+        )
+
+        return prediction_params

@@ -69,3 +69,16 @@ class ModelTrainingParams:
     random_forest_params: dict
     svr_params: dict
     test_size: float
+
+@dataclass(frozen=True)
+class PredictionConfig:
+    model_dir: Path
+
+@dataclass(frozen=True)
+class PredictionParams:
+    CIC0: float
+    SM1_Dz: float
+    GATS1i: float
+    NdsCH: float
+    NdssC: float
+    MLOGP: float

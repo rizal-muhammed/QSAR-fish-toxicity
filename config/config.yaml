@@ -38,3 +38,6 @@ model_training:
   figures_dir: artifacts/model_training/figures
   preprocessed_X: artifacts/preprocessed_data/preprocessed_data/preprocessed_input_X.csv
   preprocessed_y: artifacts/preprocessed_data/preprocessed_data/preprocessed_input_y.csv
+
+prediction_config:
+  model_dir: artifacts/model_training/best_model/best_model.pkl

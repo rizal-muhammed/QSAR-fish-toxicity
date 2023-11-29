@@ -27,3 +27,11 @@ model_training_params:
     kernel: ["linear", "poly", "rbf"]
     C: [0.1, 1, 10]
   test_size: 0.2
+
+prediction_params:
+  CIC0: 2.544
+  SM1_Dz: 0.223
+  GATS1i: 1.245
+  NdsCH: 0
+  NdssC: 0
+  MLOGP: 1.064

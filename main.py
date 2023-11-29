@@ -5,6 +5,7 @@ from QSARFishToxicity.pipeline.stage_03_data_transformation_training import Data
 from QSARFishToxicity.pipeline.stage_04_database_ops_training import DatabaseOperationsTrainingPipeline
 from QSARFishToxicity.pipeline.stage_05_data_preprocessing_training import DataPreProcessingTrainingPipeline
 from QSARFishToxicity.pipeline.stage_06_model_training import ModelTrainingPipeline
+from QSARFishToxicity.pipeline.stage_07_model_prediction import PredictionPipeline
 
 # STAGE_NAME = f"""Data Ingestion"""
 # try:
@@ -56,11 +57,21 @@ from QSARFishToxicity.pipeline.stage_06_model_training import ModelTrainingPipel
 #     logger.exception(e)
 #     raise e
 
-STAGE_NAME = f"""Model Training"""
+# STAGE_NAME = f"""Model Training"""
+# try:
+#     logger.info(f""">>>>>>> Stage {STAGE_NAME} started... <<<<<<<""")
+#     model_training = ModelTrainingPipeline()
+#     model_training.main()
+#     logger.info(f""">>>>>>> Stage {STAGE_NAME} Completed. <<<<<<<\n\n""")
+# except Exception as e:
+#     logger.exception(e)
+#     raise e
+
+STAGE_NAME = f"""Prediction"""
 try:
     logger.info(f""">>>>>>> Stage {STAGE_NAME} started... <<<<<<<""")
-    model_training = ModelTrainingPipeline()
-    model_training.main()
+    prediction = PredictionPipeline()
+    prediction.main()
     logger.info(f""">>>>>>> Stage {STAGE_NAME} Completed. <<<<<<<\n\n""")
 except Exception as e:
     logger.exception(e)

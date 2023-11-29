@@ -1,0 +1,7 @@
+artifacts_root : artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source_URL: https://archive.ics.uci.edu/static/public/504/qsar+fish+toxicity.zip
+  destination_folder: artifacts/data_ingestion
+  filename: qsar_fish_toxicity.csv

@@ -23,5 +23,11 @@ The data set is available at UCI Machine learning repository. Please refer [here
 7. Test run the pipeline stage
 <br>
 
+To run the system<br>
+- Clone the repository
+- Run app.py
+- Enter input values and click on Predict button
+<br>
+
 For more info, please refer [High Level Design Doc](https://github.com/rizal-muhammed/QSAR-fish-toxicity/tree/main/Docs/HLD)<br>
 Please refer here for [video demo]<br>

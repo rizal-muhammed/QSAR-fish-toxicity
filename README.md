@@ -25,6 +25,7 @@ The data set is available at UCI Machine learning repository. Please refer [here
 
 To run the system<br>
 - Clone the repository
+- Create a conda environment and install requirements `pip install -r requirements.txt`
 - Run app.py
 - Enter input values and click on Predict button
 <br>

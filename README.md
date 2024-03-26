@@ -31,4 +31,4 @@ To run the system<br>
 <br>
 
 For more info, please refer [High Level Design Doc](https://github.com/rizal-muhammed/QSAR-fish-toxicity/tree/main/Docs/HLD)<br>
-Please refer here for [video demo]<br>
+Please refer here for [video demo](https://youtu.be/BoixTe4725Q)<br>
